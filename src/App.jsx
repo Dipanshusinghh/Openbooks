@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { BookOpen, Search, ArrowRight } from "lucide-react";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Bookcard from "./Components/Bookcard";
@@ -11,80 +12,75 @@ const Home = () => (
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
     transition={{ duration: 0.5 }}
+    className="bg-slate-50 dark:bg-neutral-950"
   >
-    <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 flex flex-col md:flex-row">
-        <div className="relative w-full md:w-1/2 h-1/2 md:h-full overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0"
-            alt="Book 1"
-            className="w-full h-full object-cover transform rotate-2 scale-110"
-          />
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
-        </div>
-        <div className="relative w-full md:w-1/2 h-1/2 md:h-full overflow-hidden">
-          <img
-            src="https://plus.unsplash.com/premium_vector-1711645651692-7e95fef3244f?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0"
-            alt="Book 2"
-            className="w-full h-full object-cover transform -rotate-1 scale-110"
-          />
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
-        </div>
-      </div>
-      <div className="relative z-10 text-center px-6">
+    {/* Hero Section */}
+    <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+      {/* Premium Background */}
+      <div className="absolute inset-0 bg-slate-900 dark:bg-black"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/80 via-slate-900/90 to-purple-900/80 dark:from-indigo-950 dark:via-black dark:to-purple-950"></div>
+      <div 
+        className="absolute inset-0 opacity-30 dark:opacity-20 bg-cover bg-center mix-blend-overlay"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2000&auto=format&fit=crop')" }}
+      ></div>
+      
+      {/* Animated Particles/Glow */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/30 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+
+      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto mt-10">
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-indigo-200 text-sm font-medium mb-8"
+        >
+          <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+          Powered by Google Books API
+        </motion.div>
+
         <motion.h1 
-          initial={{ y: 50, opacity: 0 }}
+          initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-4xl sm:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 drop-shadow-lg"
+          className="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white tracking-tight leading-tight drop-shadow-2xl"
         >
-          Welcome to Book Ghar 📚
+          Discover Your Next <br className="hidden sm:block" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Great Read</span>
         </motion.h1>
+        
         <motion.p 
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-4 text-lg text-neutral-100 max-w-2xl mx-auto drop-shadow-md"
+          className="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto drop-shadow-md font-medium leading-relaxed"
         >
-          Discover timeless stories, master coding skills, and explore your next favorite read.
+          Explore millions of books, from timeless classics to modern programming guides. Your personal digital library starts right here.
         </motion.p>
 
         <motion.div 
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-8"
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
             to="/books"
-            className="inline-block px-8 py-4 rounded-full text-white font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 hover:scale-105 transform transition duration-300 shadow-[0_10px_20px_rgba(236,72,153,0.3)] hover:shadow-[0_15px_30px_rgba(236,72,153,0.4)]"
+            className="group flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full text-white font-bold bg-indigo-600 hover:bg-indigo-500 transition-all shadow-[0_0_20px_rgba(79,70,229,0.4)] hover:shadow-[0_0_30px_rgba(79,70,229,0.6)] hover:-translate-y-1"
           >
-            Explore Books 
+            <BookOpen className="w-5 h-5" />
+            Explore Library
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+          <Link
+            to="/books"
+            className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full text-white font-bold bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all hover:-translate-y-1"
+          >
+            <Search className="w-5 h-5" />
+            Search Books
           </Link>
         </motion.div>
       </div>
-      <motion.div 
-        animate={{ y: [0, -15, 0] }}
-        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-        className="absolute top-10 left-5 opacity-40"
-      >
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/29/29302.png"
-          alt="Floating Book"
-          className="w-12 h-12"
-        />
-      </motion.div>
-      <motion.div 
-        animate={{ y: [0, -20, 0] }}
-        transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-20 right-10 opacity-30"
-      >
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/29/29302.png"
-          alt="Floating Book"
-          className="w-16 h-16"
-        />
-      </motion.div>
     </div>
   </motion.div>
 );
