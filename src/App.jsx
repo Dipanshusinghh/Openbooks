@@ -5,6 +5,7 @@ import { BookOpen, Search, ArrowRight } from "lucide-react";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Bookcard from "./Components/Bookcard";
+import ChatAssistant from "./Components/ChatAssistant";
 
 const Home = () => (
   <motion.div 
@@ -99,6 +100,7 @@ const App = () => {
           </Routes>
         </main>
         <Footer />
+        <ChatAssistant />
       </div>
     </Router>
   );

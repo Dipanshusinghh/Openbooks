@@ -13,6 +13,7 @@
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer&logoColor=blue)
 ![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Google Gemini](https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white)
 
 </div>
 
@@ -25,6 +26,7 @@
 ## ✨ Key Features
 
 - **Live Data Fetching**: Fully integrated with the Google Books API for instantaneous, real-time book queries.
+- **Smart Book Assistant**: Built-in chat assistant using the Gemini API. It grabs live search results and recommends books conversationally.
 - **Advanced Search & Filtering**: Robust search capabilities (by author or title) with smart category filtering (Tech, Romance, Fiction, and more).
 - **Optimized Performance**: Network requests are optimized using debounce logic to prevent API rate limiting and ensure snappy feedback.
 - **Fluid UI & Animations**: High-quality layout transitions, staggered lists, and interactive hover effects powered by `Framer Motion`.
@@ -41,6 +43,7 @@
 | **Styling & UI** | Tailwind CSS (v4), Lucide React, React Icons |
 | **Animations** | Framer Motion |
 | **Data Source** | Google Books API (v1) |
+| **AI/LLM Integration**| Google Gemini (`@google/genai`) |
 | **Code Quality** | ESLint |
 
 ## 📁 Project Structure
